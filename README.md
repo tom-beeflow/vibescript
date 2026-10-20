@@ -8,14 +8,18 @@ This repository only distributes the installable package. The source code is not
 
 ## Install
 
-Requires Node.js 22.13 or newer.
+The download is password-protected. Ask the author for the password. Requires Node.js 22.13 or newer and `openssl`
+(included on macOS and Linux; on Windows it comes with Git for Windows).
 
 ```sh
-npm install -g https://github.com/tom-beeflow/vibescript/releases/download/v0.2.0-build141/vibescript-0.2.0.tgz
+curl -LO https://github.com/tom-beeflow/vibescript/releases/download/v0.2.0-build141/vibescript-0.2.0.tgz.enc
+openssl enc -d -aes-256-cbc -pbkdf2 -iter 600000 -in vibescript-0.2.0.tgz.enc -out vibescript-0.2.0.tgz
+npm install -g ./vibescript-0.2.0.tgz
 vibe --version
 ```
 
-Install from this link, not with `npm install vibescript`: the npm registry has an unrelated package with that name.
+`openssl` asks for the password. Install from this file, not with `npm install vibescript`: the npm registry has an
+unrelated package with that name.
 
 ## Quick start
 
