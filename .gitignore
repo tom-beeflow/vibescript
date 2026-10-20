@@ -1,0 +1,6 @@
+
+# never commit passwords, keys or encrypted release files
+*password*
+*.pem
+*.key
+*.tgz.enc
